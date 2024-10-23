@@ -1,0 +1,93 @@
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+}
+
+header {
+    background: #4CAF50;
+    color: white;
+    padding: 10px 0;
+    text-align: center;
+}
+
+nav a {
+    margin: 0 10px;
+    color: white;
+    text-decoration: none;
+}
+
+input[type="text"], input[type="date"], textarea {
+    width: 90%; /* تعديل الحجم */
+    margin: 10px auto; /* محاذاة الوسط */
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    display: block;
+}
+
+button {
+    padding: 10px 15px;
+    background: #4CAF50;
+    color: white;
+    border: none;
+    cursor: pointer;
+}
+
+button:hover {
+    background: #45a049;
+}
+
+main {
+    padding: 20px;
+    max-width: 600px; /* تحديد عرض أقصى */
+    margin: auto; /* محاذاة الوسط */
+}
+
+#posts {
+    margin-bottom: 20px;
+}
+
+textarea {
+    height: 60px;
+}
+
+footer {
+    text-align: center;
+    padding: 10px 0;
+    background: #f1f1f1;
+}
+
+.post {
+    border: 1px solid #ccc;
+    margin: 10px 0;
+    padding: 10px;
+}
+
+.comments {
+    margin-top: 10px;
+}
+
+.comment-input {
+    width: 80%;
+}
+
+.hidden {
+    display: none;
+}
+
+/* ثيمات */
+body.light {
+    background-color: #f9f9f9;
+    color: #333;
+}
+
+body.dark {
+    background-color: #333;
+    color: #f9f9f9;
+}
+
+body.colorful {
+    background-color: #ffeb3b;
+    color: #000;
+}

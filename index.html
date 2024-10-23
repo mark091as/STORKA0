@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="ar">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>STORKA - موقع تواصل اجتماعي</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <header>
+        <h1>مرحبًا بك في STORKA</h1>
+        <nav>
+            <a href="#home" onclick="showSection('home')">الرئيسية</a>
+            <a href="#profile" onclick="showSection('profile')">الملف الشخصي</a>
+            <a href="#messages" onclick="showSection('messages')">الرسائل</a>
+            <a href="#notifications" onclick="showSection('notifications')">الإشعارات</a>
+            <a href="#login" onclick="showSection('login')">تسجيل الدخول</a>
+        </nav>
+        <input type="text" id="search" placeholder="بحث عن مستخدمين أو منشورات..." onkeyup="searchPosts()">
+        <select id="themeSelector" onchange="changeTheme()">
+            <option value="default">اختر اللون</option>
+            <option value="light">فاتح</option>
+            <option value="dark">داكن</option>
+            <option value="colorful">ملون</option>
+        </select>
+    </header>
+
+    <main>
+        <section id="home" class="active">
+            <h2>آخر المنشورات</h2>
+            <div id="posts"></div>
+            <textarea id="newPost" placeholder="اكتب شيئًا هنا..."></textarea>
+            <input type="file" id="postImage" accept="image/*">
+            <button onclick="addPost()">إضافة مشاركة</button>
+        </section>
+
+        <section id="profile" style="display:none;">
+            <h2>الملف الشخصي</h2>
+            <form id="profileForm">
+                <input type="file" id="profileImage" accept="image/*" onchange="loadProfileImage(event)">
+                <img id="profileImagePreview" src="" alt="صورة الملف الشخصي" />
+                <input type="text" id="name" placeholder="الاسم" required>
+                <input type="text" id="username" placeholder="اسم المستخدم" required>
+                <textarea id="bio" placeholder="نبذة عني" required></textarea>
+                <input type="text" id="gender" placeholder="الجنس (ذكر/أنثى)" required>
+                <input type="text" id="birthPlace" placeholder="مكان الولادة" required>
+                <input type="text" id="currentPlace" placeholder="مكان العيش" required>
+                <input type="date" id="birthDate" required>
+                <button type="submit">حفظ المعلومات</button>
+            </form>
+        </section>
+
+        <section id="messages" style="display:none;">
+            <h2>الرسائل</h2>
+            <div id="messageList"></div>
+            <textarea id="newMessage" placeholder="اكتب رسالة هنا..."></textarea>
+            <button onclick="sendMessage()">إرسال رسالة</button>
+        </section>
+
+        <section id="notifications" style="display:none;">
+            <h2>الإشعارات</h2>
+            <div id="notificationList"></div>
+        </section>
+
+        <section id="login" style="display:none;">
+            <h2>تسجيل الدخول</h2>
+            <form id="loginForm">
+                <input type="text" id="loginUsername" placeholder="اسم المستخدم" required>
+                <input type="password" id="loginPassword" placeholder="كلمة المرور" required>
+                <button type="submit">تسجيل الدخول</button>
+            </form>
+        </section>
+    </main>
+
+    <footer>
+        <p>حقوق الطبع والنشر محفوظة لدى STORKA &copy; 2024</p>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>
